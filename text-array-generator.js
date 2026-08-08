@@ -4,13 +4,15 @@
 // На основе блок-схемы в Unidraw
 // Берёт данные из data.js
 
+// ToDo:
+// Добавить опцию обрезания длины итогового массива
+// Добавить выбор процента, когда берём часть массива в takeRandomPartOfArray()
 
 
 function generateText(textString) {
     let textArray = makeArrayOutOfString(textString);
     textArray = shuffleArray(textArray);
     textArray = takeRandomPartOfArray(textArray);
-    
 }
 
 
@@ -50,6 +52,7 @@ function shuffleArray(arr) {
     // Теперь перемешаем массив
     // Я нашёл статью на тему. Оказалось встроенного метода нет. В найденном я пока не всё понимаю
     // поэтому просто копипастнул пока его сюда.
+    // Это перемешивание алгоритмом Фишера-Йетса
     // https://dev.to/codebubb/how-to-shuffle-an-array-in-javascript-2ikj
     for (let i = arr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
