@@ -9,10 +9,12 @@
 // Добавить выбор процента, когда берём часть массива в takeRandomPartOfArray()
 
 
-function generateText(textString) {
+function generateText(textString, length = 100) {
     let textArray = makeArrayOutOfString(textString);
     textArray = shuffleArray(textArray);
     textArray = takeRandomPartOfArray(textArray);
+    // Обрезаем итоговый массив по нужной длине
+    if(textArray.length > length) textArray.length = length;
 }
 
 
